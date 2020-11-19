@@ -1,9 +1,3 @@
-"""
-Exemple de script pour l'étiquetage morpho-syntaxique (part-of-speech)
-Auteur : Lucas Terriel
-Date : 14/09/2020
-"""
-
 import sys
 from textwrap import TextWrapper
 import textwrap
@@ -13,13 +7,10 @@ import spacy
 from spacy.symbols import nsubj, VERB, ADJ
 
 
-# First feedback : list of ten words
 input_ten_words = sys.argv[1]
 
-# Second feedback : text without stops words
 input_text = sys.argv[2]
 
-# Arrange Go script feedback list of ten words for POS Tag action
 top_ten_words = input_ten_words.split(",")
 
 
@@ -42,14 +33,7 @@ model_fr = spacy.load("fr_core_news_sm")
 
 def return_POS(text):
     """
-    fonction pour tokeniser la phrase et retourner les étiquettes grammaticale
-    de chaque token.
-    :param sentence: phrase
-    :type sentence: str
-    :return: token et étiquettes POS
-    :type return : list
     """
-    # Découpage de la phrase en mots (tokens)
     document = model_fr(text)
     lexical_field_verbose = defaultdict(list)
     a= []
